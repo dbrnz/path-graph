@@ -1,0 +1,19 @@
+{
+  "name": "path-graph",
+  "description": "Show neuron connectivity graphs on a canvas",
+  "version": "0.0.1",
+  "author": "David Brooks",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "vite serve --port 3001"
+  },
+  "dependencies": {
+    "cytoscape": "^3.29.2"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2",
+    "vite": "^5.1.4"
+  }
+}
