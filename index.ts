@@ -170,6 +170,7 @@ const GRAPH_STYLE = [
     }
 ]
 
+//==============================================================================
 
 class CytoscapeGraph
 {
@@ -200,6 +201,14 @@ class CytoscapeGraph
         graphCanvas.lastChild.appendChild(this.#tooltip)
     }
 
+    #checkRightBoundary(leftPos: number)
+    //==================================
+    {
+        if ((leftPos + this.#tooltip.offsetWidth) >= this.#tooltip.parentElement.offsetWidth) {
+            this.#tooltip.style.left = `${leftPos - this.#tooltip.offsetWidth}px`
+        }
+    }
+
     #overNode(event)
     //==============
     {
@@ -208,6 +217,7 @@ class CytoscapeGraph
         this.#tooltip.style.left = `${event.renderedPosition.x}px`
         this.#tooltip.style.top = `${event.renderedPosition.y}px`
         this.#tooltip.hidden = false
+        this.#checkRightBoundary(event.renderedPosition.x)
     }
 
     #moveNode(event)
@@ -216,6 +226,7 @@ class CytoscapeGraph
         const node = event.target
         this.#tooltip.style.left = `${node.renderedPosition().x}px`
         this.#tooltip.style.top = `${node.renderedPosition().y}px`
+        this.#checkRightBoundary(node.renderedPosition().x)
     }
 
     #exitNode(event)

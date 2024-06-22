@@ -18,6 +18,5 @@ Suggested enhancements
 ----------------------
 
 *   Use human-readable labels for terms.
-*   Better position tooltip when near to the right side of the canvas.
 *   Provide a callback function and a ``click`` handler to allow a calling
     application to highlight features that correspond to graph nodes.
